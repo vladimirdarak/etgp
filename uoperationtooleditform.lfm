@@ -1,0 +1,138 @@
+object frmOperationTool: TfrmOperationTool
+  Left = 241
+  Height = 226
+  Top = 152
+  Width = 282
+  BorderStyle = bsDialog
+  Caption = 'frmOperationTool'
+  ClientHeight = 226
+  ClientWidth = 282
+  OnCreate = FormCreate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object gbOperationTool: TGroupBox
+    Left = 6
+    Height = 170
+    Top = 6
+    Width = 270
+    Align = alTop
+    BorderSpacing.Around = 6
+    Caption = 'Nástroj'
+    ClientHeight = 151
+    ClientWidth = 268
+    TabOrder = 0
+    object cbToolName: TDBLookupComboBox
+      Left = 17
+      Height = 30
+      Top = 24
+      Width = 232
+      DataField = 'tool_id'
+      DataSource = frmMain.dsTools
+      KeyField = 'tool_id'
+      ListField = 'tool_name'
+      ListFieldIndex = 0
+      ListSource = dsTool
+      LookupCache = False
+      OnChange = cbToolNameChange
+      ScrollListDataset = True
+      Style = csDropDownList
+      TabOrder = 0
+    end
+    object Label1: TLabel
+      Left = 17
+      Height = 19
+      Top = 8
+      Width = 39
+      Caption = 'Názov'
+      ParentColor = False
+    end
+    object Label2: TLabel
+      Left = 17
+      Height = 19
+      Top = 64
+      Width = 35
+      Caption = 'Popis'
+      ParentColor = False
+    end
+    object DBMemo1: TDBMemo
+      Left = 17
+      Height = 58
+      Top = 80
+      Width = 232
+      DataField = 'tool_description'
+      DataSource = dsTool
+      ReadOnly = True
+      TabOrder = 1
+    end
+  end
+  object btnOK: TBitBtn
+    Left = 112
+    Height = 30
+    Top = 184
+    Width = 75
+    Caption = 'Pridať'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object btnCancel: TBitBtn
+    Left = 192
+    Height = 30
+    Top = 184
+    Width = 75
+    Caption = 'Zrušiť'
+    ModalResult = 2
+    TabOrder = 2
+  end
+  object qryTool: TZQuery
+    Connection = frmMain.dbConnection
+    SortedFields = 'tool_name'
+    AfterScroll = qryToolAfterScroll
+    SQL.Strings = (
+      'SELECT tool_id, tool_name, tool_description FROM tool'
+    )
+    Params = <>
+    DataSource = frmMain.dsTools
+    IndexFieldNames = 'tool_name Asc'
+    left = 40
+    top = 112
+    object qryTooltool_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tool_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryTooltool_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'tool_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryTooltool_description: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tool_description'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsTool: TDatasource
+    DataSet = qryTool
+    left = 40
+    top = 168
+  end
+end

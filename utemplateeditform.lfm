@@ -1,0 +1,78 @@
+object frmTemplateEdit: TfrmTemplateEdit
+  Left = 951
+  Height = 252
+  Top = 160
+  Width = 366
+  BorderStyle = bsDialog
+  ClientHeight = 252
+  ClientWidth = 366
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object gbTemplate: TGroupBox
+    Left = 6
+    Height = 202
+    Top = 6
+    Width = 354
+    Align = alTop
+    BorderSpacing.Around = 6
+    Caption = 'Šablóna'
+    ClientHeight = 183
+    ClientWidth = 352
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 7
+      Height = 19
+      Top = 6
+      Width = 39
+      Caption = 'Názov'
+      ParentColor = False
+    end
+    object edtName: TDBEdit
+      Left = 7
+      Height = 30
+      Top = 22
+      Width = 338
+      DataField = 'template_name'
+      DataSource = frmTemplates.dsTemplates
+      CharCase = ecNormal
+      MaxLength = 0
+      TabOrder = 0
+    end
+    object Label2: TLabel
+      Left = 9
+      Height = 19
+      Top = 56
+      Width = 35
+      Caption = 'Popis'
+      ParentColor = False
+    end
+    object mDesc: TDBMemo
+      Left = 9
+      Height = 98
+      Top = 72
+      Width = 338
+      DataField = 'template_desc'
+      DataSource = frmTemplates.dsTemplates
+      ScrollBars = ssAutoVertical
+      TabOrder = 1
+    end
+  end
+  object btnOK: TBitBtn
+    Left = 200
+    Height = 30
+    Top = 216
+    Width = 75
+    Caption = 'OK'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object btnClose: TBitBtn
+    Left = 280
+    Height = 30
+    Top = 216
+    Width = 75
+    Caption = 'Zrušiť'
+    ModalResult = 2
+    TabOrder = 2
+  end
+end

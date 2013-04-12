@@ -1,0 +1,25 @@
+object frmCiselnikFormOperationName: TfrmCiselnikFormOperationName
+  Left = 264
+  Height = 341
+  Top = 167
+  Width = 472
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'frmCiselnikFormOperationName'
+  ClientHeight = 341
+  ClientWidth = 472
+  LCLVersion = '1.0.4.0'
+  object grdList: TDBGrid
+    Left = 0
+    Height = 341
+    Top = 0
+    Width = 472
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    ReadOnly = True
+    Scrollbars = ssAutoVertical
+    TabOrder = 0
+    TitleStyle = tsNative
+  end
+end

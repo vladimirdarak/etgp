@@ -1,0 +1,68 @@
+object frmCiselniky: TfrmCiselniky
+  Left = 234
+  Height = 481
+  Top = 160
+  Width = 656
+  BorderStyle = bsDialog
+  Caption = 'Číselníky ...'
+  ClientHeight = 481
+  ClientWidth = 656
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object pcCiselniky: TPageControl
+    Left = 0
+    Height = 432
+    Top = 0
+    Width = 656
+    Align = alClient
+    TabOrder = 0
+    OnChange = pcCiselnikyChange
+  end
+  object pnlActions: TPanel
+    Left = 0
+    Height = 49
+    Top = 432
+    Width = 656
+    Align = alBottom
+    ClientHeight = 49
+    ClientWidth = 656
+    TabOrder = 1
+    object btnAdd: TBitBtn
+      Left = 16
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Pridať'
+      OnClick = btnAddClick
+      TabOrder = 0
+    end
+    object btnEdit: TBitBtn
+      Left = 96
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Upraviť'
+      OnClick = btnEditClick
+      TabOrder = 1
+    end
+    object btnDelete: TBitBtn
+      Left = 176
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Zmazať'
+      OnClick = btnDeleteClick
+      TabOrder = 2
+    end
+    object btnClose: TBitBtn
+      Left = 568
+      Height = 30
+      Top = 8
+      Width = 75
+      Caption = 'Zavrieť'
+      ModalResult = 2
+      TabOrder = 3
+    end
+  end
+end

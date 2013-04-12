@@ -1,0 +1,55 @@
+object frmAbout: TfrmAbout
+  Left = 245
+  Height = 242
+  Top = 171
+  Width = 325
+  BorderStyle = bsDialog
+  Caption = 'O programe'
+  ClientHeight = 242
+  ClientWidth = 325
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object Label1: TLabel
+    Left = 104
+    Height = 40
+    Top = 8
+    Width = 56
+    AutoSize = False
+    Caption = 'eTGP'
+    Font.Height = -21
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 156
+    Height = 19
+    Top = 22
+    Width = 60
+    Caption = 'verzia 0.1'
+    ParentColor = False
+  end
+  object Memo1: TMemo
+    Left = 8
+    Height = 154
+    Top = 48
+    Width = 312
+    Lines.Strings = (
+      'Jednoduchý CAPP systém pre malé a stredné firmy, ktoré sa zaoberajú povrchovou úpravou kovov.'
+      'Jedná sa o variantný CAPP systém, ktorý pracuje na princípe skupinovej technológie.'
+    )
+    OnChange = Memo1Change
+    ReadOnly = True
+    ScrollBars = ssAutoVertical
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 232
+    Height = 25
+    Top = 208
+    Width = 75
+    Caption = 'Zavrieť'
+    ModalResult = 11
+    TabOrder = 1
+  end
+end

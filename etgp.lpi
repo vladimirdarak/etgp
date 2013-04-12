@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="9"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="etgp"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MinorVersionNr Value="1"/>
+      <RevisionNr Value="7"/>
+      <BuildNr Value="10"/>
+      <StringTable ProductVersion=""/>
+    </VersionInfo>
+    <BuildModes Count="1">
+      <Item1 Name="Default" Default="True"/>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <IncludeFileFilter Value="*.(pas|pp|inc|lfm|lpr|lrs|lpi|lpk|sh|xml)"/>
+      <ExcludeFileFilter Value="*.(bak|ppu|o|so);*~;backup"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="5">
+      <Item1>
+        <PackageName Value="lazreportpdfexport"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="lazreport"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="FCL"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="zcomponent"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="LCL"/>
+      </Item5>
+    </RequiredPackages>
+    <Units Count="26">
+      <Unit0>
+        <Filename Value="etgp.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="etgp"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UMainForm"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="unitcisleniky.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselniky"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitCiselniky"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="unitciselinikyadd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselnikAdd"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitCiselinikyAdd"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="upartcodingform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPartCoding"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UPartCodingForm"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uoptimaltpform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOptimalTP"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOptimalTPForm"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ucabstract.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCAbstract"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uciselnikdefaultform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselnikFormDefault"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCiselnikDefaultForm"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unitciselnikmachinedata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MachineData"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="UnitCiselnikMachineData"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="ucfixture.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCFixture"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ucoperationname.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCOperationName"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uoperationnameform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselnikFormOperationName"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationNameForm"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="usettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="USettings"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="utools.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UTools"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="utemplatesform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTemplates"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTemplatesForm"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="utemplateeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTemplateEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTemplateEditForm"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="utpoperationeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTPOperationEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTPOperationEditForm"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="uoperationtooleditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOperationTool"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationToolEditForm"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="uoperationfixtureeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOperationFixtureEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationFixtureEditForm"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="ucompaniesform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCompanies"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCompaniesForm"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="ucompanyeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCompanyEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCompanyEditForm"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="ucompany.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCompany"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="uoperationeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOperationEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationEditForm"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="utemplatechooseform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTemplateChoose"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTemplateChooseForm"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="uprogressform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmProgress"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UProgressForm"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="uaboutform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UAboutForm"/>
+      </Unit25>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="etgp"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Linking>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+    <Other>
+      <CompilerMessages>
+        <MsgFileName Value=""/>
+      </CompilerMessages>
+      <CompilerPath Value="$(CompPath)"/>
+    </Other>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

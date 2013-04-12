@@ -1,0 +1,91 @@
+object frmTemplateChoose: TfrmTemplateChoose
+  Left = 345
+  Height = 257
+  Top = 160
+  Width = 394
+  BorderStyle = bsDialog
+  Caption = 'Importovať zo šablóny'
+  ClientHeight = 257
+  ClientWidth = 394
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object gbTemplates: TDBGroupBox
+    Left = 6
+    Height = 202
+    Top = 6
+    Width = 382
+    Align = alTop
+    BorderSpacing.Around = 6
+    Caption = 'Šablóna'
+    ClientHeight = 183
+    ClientWidth = 380
+    TabOrder = 0
+    object grdTemplates: TDBGrid
+      Left = 9
+      Height = 168
+      Top = 8
+      Width = 360
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Názov'
+          Width = 160
+          FieldName = 'template_name'
+        end      
+        item
+          Title.Caption = 'Popis'
+          Width = 200
+          FieldName = 'template_desc'
+        end>
+      DataSource = dsTemplates
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleStyle = tsNative
+      OnPrepareCanvas = grdTemplatesPrepareCanvas
+    end
+  end
+  object pnlActions: TPanel
+    Left = 0
+    Height = 46
+    Top = 211
+    Width = 394
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 46
+    ClientWidth = 394
+    TabOrder = 1
+    object btnClose: TBitBtn
+      Left = 301
+      Height = 30
+      Top = 5
+      Width = 75
+      Caption = 'Zrušiť'
+      ModalResult = 2
+      TabOrder = 0
+    end
+    object btnOK: TBitBtn
+      Left = 208
+      Height = 30
+      Top = 5
+      Width = 91
+      Caption = 'Importovať'
+      ModalResult = 1
+      TabOrder = 1
+    end
+  end
+  object dsTemplates: TDatasource
+    DataSet = qryTemplates
+    left = 56
+    top = 136
+  end
+  object qryTemplates: TZQuery
+    Connection = frmMain.dbConnection
+    SQL.Strings = (
+      'SELECT * FROM template'
+    )
+    Params = <>
+    left = 56
+    top = 88
+  end
+end

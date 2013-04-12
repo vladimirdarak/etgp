@@ -1,0 +1,21 @@
+object frmProgress: TfrmProgress
+  Left = 311
+  Height = 21
+  Top = 183
+  Width = 180
+  BorderStyle = bsNone
+  BorderWidth = 2
+  Caption = 'frmProgress'
+  ClientHeight = 21
+  ClientWidth = 180
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object pbProgress: TProgressBar
+    Left = 2
+    Height = 17
+    Top = 2
+    Width = 176
+    Align = alClient
+    TabOrder = 0
+  end
+end

@@ -1,0 +1,87 @@
+object frmCiselnikFormDefault: TfrmCiselnikFormDefault
+  Left = 703
+  Height = 367
+  Top = 217
+  Width = 581
+  Align = alClient
+  BorderStyle = bsNone
+  Caption = 'frmCiselnikFormDefault'
+  ClientHeight = 367
+  ClientWidth = 581
+  LCLVersion = '1.0.4.0'
+  object grdList: TDBGrid
+    Left = 0
+    Height = 367
+    Top = 0
+    Width = 346
+    Align = alClient
+    Color = clWindow
+    Columns = <>
+    ReadOnly = True
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+    TitleStyle = tsNative
+  end
+  object pnlAttributes: TPanel
+    Left = 346
+    Height = 367
+    Top = 0
+    Width = 235
+    Align = alRight
+    BevelOuter = bvNone
+    ClientHeight = 367
+    ClientWidth = 235
+    TabOrder = 1
+    object GroupBox1: TGroupBox
+      Left = 8
+      Height = 152
+      Top = 10
+      Width = 219
+      Caption = 'Parametre'
+      ClientHeight = 133
+      ClientWidth = 217
+      TabOrder = 0
+      object grdAttrs: TDBGrid
+        Left = 12
+        Height = 100
+        Top = 12
+        Width = 200
+        Color = clWindow
+        Columns = <        
+          item
+            MaxSize = 40
+            Title.Caption = 'Názov'
+            Width = 60
+            FieldName = 'attribute_name'
+          end        
+          item
+            Title.Caption = 'Hodnota'
+            Width = 80
+            FieldName = 'attribute_value'
+          end>
+        ReadOnly = True
+        Scrollbars = ssAutoBoth
+        TabOrder = 0
+        TitleStyle = tsNative
+      end
+    end
+    object gbDescription: TGroupBox
+      Left = 8
+      Height = 113
+      Top = 170
+      Width = 219
+      Caption = 'Popis'
+      ClientHeight = 94
+      ClientWidth = 217
+      TabOrder = 1
+      object mDesc: TDBMemo
+        Left = 7
+        Height = 80
+        Top = 6
+        Width = 205
+        ReadOnly = True
+        TabOrder = 0
+      end
+    end
+  end
+end

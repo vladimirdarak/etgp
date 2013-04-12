@@ -1,0 +1,379 @@
+object frmSettings: TfrmSettings
+  Left = 567
+  Height = 547
+  Top = 122
+  Width = 592
+  Caption = 'Nastavenia'
+  ClientHeight = 547
+  ClientWidth = 592
+  OnCloseQuery = FormCloseQuery
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object pcSettings: TPageControl
+    Left = 0
+    Height = 504
+    Top = 0
+    Width = 592
+    ActivePage = tsOwner
+    Align = alClient
+    TabIndex = 1
+    TabOrder = 0
+    object tsConnection: TTabSheet
+      Caption = 'Databáza'
+      ClientHeight = 472
+      ClientWidth = 582
+      object gbDBConnection: TGroupBox
+        Left = 6
+        Height = 196
+        Top = 6
+        Width = 570
+        Align = alTop
+        BorderSpacing.Around = 6
+        Caption = 'Pripojenie'
+        ClientHeight = 177
+        ClientWidth = 568
+        TabOrder = 0
+        object edtDBHost: TLabeledEdit
+          Left = 12
+          Height = 30
+          Top = 26
+          Width = 192
+          EditLabel.AnchorSideLeft.Control = edtDBHost
+          EditLabel.AnchorSideRight.Control = edtDBHost
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtDBHost
+          EditLabel.Left = 12
+          EditLabel.Height = 19
+          EditLabel.Top = 4
+          EditLabel.Width = 192
+          EditLabel.Caption = 'Host:'
+          EditLabel.ParentColor = False
+          TabOrder = 0
+          Text = 'localhost'
+        end
+        object edtDBPort: TLabeledEdit
+          Left = 212
+          Height = 30
+          Top = 26
+          Width = 80
+          EditLabel.AnchorSideLeft.Control = edtDBPort
+          EditLabel.AnchorSideRight.Control = edtDBPort
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtDBPort
+          EditLabel.Left = 212
+          EditLabel.Height = 19
+          EditLabel.Top = 4
+          EditLabel.Width = 80
+          EditLabel.Caption = 'Port:'
+          EditLabel.ParentColor = False
+          TabOrder = 1
+          Text = '5432'
+        end
+        object edtDBUser: TLabeledEdit
+          Left = 12
+          Height = 30
+          Top = 138
+          Width = 136
+          EditLabel.AnchorSideLeft.Control = edtDBUser
+          EditLabel.AnchorSideRight.Control = edtDBUser
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtDBUser
+          EditLabel.Left = 12
+          EditLabel.Height = 19
+          EditLabel.Top = 116
+          EditLabel.Width = 136
+          EditLabel.Caption = 'Uživ. meno'
+          EditLabel.ParentColor = False
+          TabOrder = 2
+          Text = 'tgp'
+        end
+        object edtDBPass: TLabeledEdit
+          Left = 156
+          Height = 30
+          Top = 138
+          Width = 136
+          EchoMode = emPassword
+          EditLabel.AnchorSideLeft.Control = edtDBPass
+          EditLabel.AnchorSideRight.Control = edtDBPass
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtDBPass
+          EditLabel.Left = 156
+          EditLabel.Height = 19
+          EditLabel.Top = 116
+          EditLabel.Width = 136
+          EditLabel.Caption = 'Heslo:'
+          EditLabel.ParentColor = False
+          PasswordChar = '*'
+          TabOrder = 3
+          Text = 'Vlado_12'
+        end
+        object edtDBName: TLabeledEdit
+          Left = 12
+          Height = 30
+          Top = 82
+          Width = 192
+          EditLabel.AnchorSideLeft.Control = edtDBName
+          EditLabel.AnchorSideRight.Control = edtDBName
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtDBName
+          EditLabel.Left = 12
+          EditLabel.Height = 19
+          EditLabel.Top = 60
+          EditLabel.Width = 192
+          EditLabel.Caption = 'Databáza:'
+          EditLabel.ParentColor = False
+          TabOrder = 4
+          Text = 'tgp'
+        end
+      end
+    end
+    object tsOwner: TTabSheet
+      Caption = 'Spoločnosť'
+      ClientHeight = 472
+      ClientWidth = 582
+      object gbInitials: TGroupBox
+        Left = 6
+        Height = 89
+        Top = 6
+        Width = 570
+        Align = alTop
+        BorderSpacing.Around = 6
+        Caption = 'Iniciály'
+        ClientHeight = 70
+        ClientWidth = 568
+        TabOrder = 0
+        object edtCompanyName: TDBEdit
+          Left = 18
+          Height = 30
+          Top = 22
+          Width = 258
+          DataField = 'company_name'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label1: TLabel
+          Left = 18
+          Height = 19
+          Top = 4
+          Width = 114
+          Caption = 'Názov spoločnosti'
+          ParentColor = False
+        end
+        object edtICO: TDBEdit
+          Left = 292
+          Height = 30
+          Top = 22
+          Width = 120
+          DataField = 'ico'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label2: TLabel
+          Left = 292
+          Height = 19
+          Top = 4
+          Width = 23
+          Caption = 'IČO'
+          ParentColor = False
+        end
+        object edtDIC: TDBEdit
+          Left = 428
+          Height = 30
+          Top = 22
+          Width = 120
+          DataField = 'dic'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label3: TLabel
+          Left = 428
+          Height = 19
+          Top = 4
+          Width = 22
+          Caption = 'DIČ'
+          ParentColor = False
+        end
+      end
+      object GroupBox1: TGroupBox
+        Left = 6
+        Height = 141
+        Top = 101
+        Width = 570
+        Align = alTop
+        BorderSpacing.Around = 6
+        Caption = 'Kontaktné informácie'
+        ClientHeight = 122
+        ClientWidth = 568
+        TabOrder = 1
+        object edtCompanyName1: TDBEdit
+          Left = 18
+          Height = 30
+          Top = 22
+          Width = 186
+          DataField = 'street'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 0
+        end
+        object Label4: TLabel
+          Left = 18
+          Height = 19
+          Top = 4
+          Width = 71
+          Caption = 'Ulica a číslo'
+          ParentColor = False
+        end
+        object edtPSC: TDBEdit
+          Left = 220
+          Height = 30
+          Top = 22
+          Width = 64
+          DataField = 'psc'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 1
+        end
+        object Label5: TLabel
+          Left = 220
+          Height = 19
+          Top = 4
+          Width = 26
+          Caption = 'PSČ'
+          ParentColor = False
+        end
+        object edtCity: TDBEdit
+          Left = 300
+          Height = 30
+          Top = 22
+          Width = 120
+          DataField = 'city'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 2
+        end
+        object Label6: TLabel
+          Left = 300
+          Height = 19
+          Top = 4
+          Width = 39
+          Caption = 'Mesto'
+          ParentColor = False
+        end
+        object edtState: TDBEdit
+          Left = 428
+          Height = 30
+          Top = 22
+          Width = 120
+          DataField = 'state'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 3
+        end
+        object Label7: TLabel
+          Left = 428
+          Height = 19
+          Top = 4
+          Width = 25
+          Caption = 'Štát'
+          ParentColor = False
+        end
+        object edtEmail: TDBEdit
+          Left = 18
+          Height = 30
+          Top = 77
+          Width = 162
+          DataField = 'email'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 4
+        end
+        object Label8: TLabel
+          Left = 18
+          Height = 19
+          Top = 59
+          Width = 31
+          Caption = 'Email'
+          ParentColor = False
+        end
+        object edtPhone: TDBEdit
+          Left = 196
+          Height = 30
+          Top = 77
+          Width = 154
+          DataField = 'phone'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 5
+        end
+        object Label9: TLabel
+          Left = 196
+          Height = 19
+          Top = 59
+          Width = 23
+          Caption = 'Tel.'
+          ParentColor = False
+        end
+        object edtPhone1: TDBEdit
+          Left = 364
+          Height = 30
+          Top = 77
+          Width = 154
+          DataField = 'phone1'
+          DataSource = frmMain.dsCompanies
+          CharCase = ecNormal
+          MaxLength = 0
+          TabOrder = 6
+        end
+        object Label10: TLabel
+          Left = 364
+          Height = 19
+          Top = 59
+          Width = 34
+          Caption = 'Mobil'
+          ParentColor = False
+        end
+      end
+    end
+  end
+  object pnlActions: TPanel
+    Left = 0
+    Height = 43
+    Top = 504
+    Width = 592
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 43
+    ClientWidth = 592
+    TabOrder = 1
+    object btnCancel: TButton
+      Left = 496
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Zrušiť'
+      ModalResult = 2
+      TabOrder = 0
+    end
+    object btnOK: TButton
+      Left = 416
+      Height = 25
+      Top = 8
+      Width = 75
+      Caption = 'Uložiť'
+      ModalResult = 1
+      TabOrder = 1
+    end
+  end
+end

@@ -1,0 +1,754 @@
+object frmOptimalTP: TfrmOptimalTP
+  Left = 497
+  Height = 513
+  Top = 156
+  Width = 635
+  Caption = 'Nový optimálny TP'
+  ClientHeight = 513
+  ClientWidth = 635
+  KeyPreview = True
+  OnActivate = FormActivate
+  OnCloseQuery = FormCloseQuery
+  OnKeyPress = FormKeyPress
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object btnOK: TBitBtn
+    Left = 456
+    Height = 30
+    Top = 472
+    Width = 75
+    Caption = 'Uložiť'
+    ModalResult = 1
+    TabOrder = 1
+  end
+  object btnCancel: TBitBtn
+    Left = 536
+    Height = 30
+    Top = 472
+    Width = 75
+    Caption = 'Zrušiť'
+    ModalResult = 2
+    OnClick = btnCancelClick
+    TabOrder = 2
+  end
+  object pcEditTP: TPageControl
+    Left = 0
+    Height = 464
+    Top = 0
+    Width = 635
+    ActivePage = tsTPOperations
+    Align = alTop
+    TabIndex = 1
+    TabOrder = 0
+    object tsTPHeader: TTabSheet
+      Caption = 'Hlavička'
+      ClientHeight = 432
+      ClientWidth = 625
+      object ScrollBox1: TScrollBox
+        Left = 0
+        Height = 432
+        Top = 0
+        Width = 625
+        HorzScrollBar.Page = 625
+        VertScrollBar.Page = 432
+        Align = alClient
+        BorderStyle = bsNone
+        ClientHeight = 432
+        ClientWidth = 625
+        TabOrder = 0
+        object gbBasic: TGroupBox
+          Left = 0
+          Height = 200
+          Top = 0
+          Width = 625
+          Align = alTop
+          Caption = 'Základné'
+          ClientHeight = 181
+          ClientWidth = 623
+          TabOrder = 0
+          object edtCreated: TDBEdit
+            Left = 17
+            Height = 26
+            Top = 136
+            Width = 184
+            DataField = 'created'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+          object cbCompany: TDBLookupComboBox
+            Left = 17
+            Height = 30
+            Top = 24
+            Width = 588
+            DataField = 'company_id'
+            DataSource = frmMain.dsProcess
+            KeyField = 'company_id'
+            ListField = 'company_name'
+            ListFieldIndex = 0
+            ListSource = frmMain.dsCompanies
+            LookupCache = False
+            NullValueKey = 16430
+            ScrollListDataset = True
+            Style = csDropDownList
+            TabOrder = 0
+          end
+          object edtChecked: TDBEdit
+            Left = 219
+            Height = 26
+            Top = 136
+            Width = 184
+            DataField = 'checked'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 4
+          end
+          object edtApproved: TDBEdit
+            Left = 421
+            Height = 26
+            Top = 136
+            Width = 184
+            DataField = 'approved'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 5
+          end
+          object Label7: TLabel
+            Left = 17
+            Height = 19
+            Top = 118
+            Width = 61
+            Caption = 'Vyhotovil'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label8: TLabel
+            Left = 219
+            Height = 19
+            Top = 118
+            Width = 78
+            Caption = 'Skontroloval'
+            ParentColor = False
+          end
+          object Label9: TLabel
+            Left = 421
+            Height = 19
+            Top = 118
+            Width = 46
+            Caption = 'Schválil'
+            ParentColor = False
+          end
+          object Label1: TLabel
+            Left = 17
+            Height = 19
+            Top = 8
+            Width = 66
+            Caption = 'Odberateľ'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label5: TLabel
+            Left = 18
+            Height = 19
+            Top = 62
+            Width = 85
+            Caption = 'Dátum zadania'
+            ParentColor = False
+          end
+          object edtDateAssign: TDateEdit
+            Left = 18
+            Height = 26
+            Top = 80
+            Width = 80
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            OKCaption = 'OK'
+            CancelCaption = 'Cancel'
+            DateOrder = doDMY
+            ButtonWidth = 23
+            CharCase = ecNormal
+            Glyph.Data = {
+              36040000424D3604000000000000360000002800000010000000100000000100
+              2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+              72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+              52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+              75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+              C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+              7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+              ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+              7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+              B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+              82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+              BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+              87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+              75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+              8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+              73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+              8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+              71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+              94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+              ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+              98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+              FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+              9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+              FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+              9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+              FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+              A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+              F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+              A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+              8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+            }
+            NumGlyphs = 0
+            MaxLength = 10
+            TabOrder = 1
+          end
+          object Label6: TLabel
+            Left = 146
+            Height = 19
+            Top = 63
+            Width = 114
+            Caption = 'Dátum vyhotovenia'
+            ParentColor = False
+          end
+          object edtDateIssue: TDateEdit
+            Left = 146
+            Height = 26
+            Top = 80
+            Width = 83
+            DialogTitle = 'Vyberte dátum'
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            OKCaption = 'OK'
+            CancelCaption = 'Zrušiť'
+            DateOrder = doDMY
+            ButtonWidth = 23
+            CharCase = ecNormal
+            Glyph.Data = {
+              36040000424D3604000000000000360000002800000010000000100000000100
+              2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D69E
+              72C4D3996EF4D19668FFCE9263FFCB8E5EFFC98A5BFFC78756FFC38452FFC384
+              52FFC38452FFC38452FFC38452FFC38452FFBB7742B0FFFFFF00FFFFFF00D7A1
+              75FFF8F2EDFFF7F0EAFFF6EDE6FFF4EAE2FFF3E7DEFFF1E4DBFFF0E2D8FFEAD6
+              C8FFF2E5DCFFFAF4F1FFF9F3F0FFFAF5F2FFC58A5DFDFFFFFF00FFFFFF00D9A4
+              7AFFF9F3EEFFEBD2BEFFFFFFFFFFEBD3BFFFFFFFFFFFEBD3C0FFFFFFFFFFEAC7
+              ADFFECD9CDFFF1E4DBFFF9F3F0FFF9F2EFFFC68C5FFFFFFFFF00FFFFFF00DDA8
+              7EFFF9F3EFFFEBD0BAFFEBD0BBFF75B57AFF75B57AFF75B57AFFEBD1BDFFEACD
+              B5FFFAF4F0FFEBD9CCFFF1E4DBFFFAF4F1FFC68A5CFFFFFFFF00FFFFFF00DFAA
+              82FFF9F3EFFFEACEB7FFFFFFFFFF75B57AFF94D49BFF74B579FFFFFFFFFFEACF
+              BAFFFBF6F2FFFAF3F0FFEBD8CBFFF2E6DDFFC88D5FFFFFFFFF00FFFFFF00E1AE
+              87FFFAF4F0FFEACBB2FFEACCB3FF75B57AFF74B579FF73B478FFEACEB7FF70B3
+              75FF6FB274FF6EB172FFE8C8AEFFEAD7C9FFC48654FFFFFFFF00FFFFFF00E3B1
+              8CFFFAF6F1FFEAC9AEFFFFFFFFFFEAC9B0FFFFFFFFFFE9CBB3FFFFFFFFFF6FB1
+              73FF8ED295FF6BAF6FFFFFFFFFFFF1E5DBFFC68655FFFFFFFF00FFFFFF00E5B4
+              8FFFFAF6F2FFE9C6AAFFE9C6ACFFEAC7ACFFE9C7ADFFE9C9AEFFE9C9B0FF6CB0
+              71FF6AAF6EFF68AD6DFFE8CCB5FFF2E7DEFFC88A59FFFFFFFF00FFFFFF00E7B7
+              94FFFBF7F4FFE9C3A6FFFFFFFFFFE8C4A9FFFFFFFFFFE9C6AAFFFFFFFFFFE8C7
+              ACFFFFFFFFFFE8C8B0FFFFFFFFFFF7F1EBFFCB8F5FFFFFFFFF00FFFFFF00E9BA
+              98FFFBF7F4FF65A4FFFF64A3FFFF62A2FFFF61A1FFFF5F9FFFFF5C9DFFFF5A9A
+              FFFF5798FFFF5495FFFF5294FFFFFBF7F4FFCE9364FFFFFFFF00FFFFFF00EBBD
+              9BFFFBF7F4FF64A4FFFF79BDFFFF75BBFFFF71B9FFFF6DB8FFFF68B3FFFF61B0
+              FFFF5AABFFFF54A7FFFF3B7DFFFFFBF7F4FFD1976AFFFFFFFF00FFFFFF00ECBF
+              9EFFFBF7F4FF65A4FFFF64A3FFFF60A0FFFF5D9EFFFF5899FFFF5496FFFF4D90
+              FFFF478BFFFF4284FFFF3D7FFFFFFBF7F4FFD49B6FFFFFFFFF00FFFFFF00EEC1
+              A1EBFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7
+              F4FFFBF7F4FFFBF7F4FFFBF7F4FFFBF7F4FFD7A074F8FFFFFF00FFFFFF00EFC2
+              A37EEFC1A2E3EDC09FFFEBBE9DFFEBBC9AFFE9BA96FFE7B793FFE6B590FFE4B2
+              8CFFE2AF88FFE0AC84FFDDA980FFDCA57DFFDAA37ACAFFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+              FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+            }
+            NumGlyphs = 0
+            MaxLength = 10
+            OnClick = edtDateIssueClick
+            TabOrder = 2
+          end
+        end
+        object gbPart: TGroupBox
+          Left = 0
+          Height = 223
+          Top = 200
+          Width = 625
+          Align = alTop
+          Caption = 'Súčiastka'
+          ClientHeight = 204
+          ClientWidth = 623
+          TabOrder = 1
+          object edtTPName: TDBEdit
+            Left = 17
+            Height = 26
+            Top = 18
+            Width = 185
+            DataField = 'part_name'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            ParentFont = False
+            TabOrder = 0
+          end
+          object Label2: TLabel
+            Left = 18
+            Height = 19
+            Top = 0
+            Width = 103
+            Caption = 'Názov súčiastky'
+            Font.Style = [fsBold]
+            ParentColor = False
+            ParentFont = False
+          end
+          object Label3: TLabel
+            Left = 219
+            Height = 19
+            Top = 0
+            Width = 83
+            Caption = 'Číslo výkresu'
+            ParentColor = False
+          end
+          object edtDrawingNumber: TDBEdit
+            Left = 219
+            Height = 26
+            Top = 18
+            Width = 184
+            DataField = 'drawing_number'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 1
+          end
+          object Label4: TLabel
+            Left = 421
+            Height = 19
+            Top = 0
+            Width = 53
+            Caption = 'Počet ks'
+            ParentColor = False
+          end
+          object edtQuantity: TDBEdit
+            Left = 421
+            Height = 26
+            Top = 18
+            Width = 80
+            DataField = 'quantity'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 2
+          end
+          object edtPartWeight: TDBEdit
+            Left = 525
+            Height = 26
+            Top = 18
+            Width = 80
+            DataField = 'part_weight'
+            DataSource = frmMain.dsProcess
+            CharCase = ecNormal
+            MaxLength = 0
+            TabOrder = 3
+          end
+          object Label10: TLabel
+            Left = 525
+            Height = 19
+            Top = 0
+            Width = 54
+            Caption = 'Váha 1ks'
+            ParentColor = False
+          end
+          object GroupBox1: TGroupBox
+            Left = 18
+            Height = 136
+            Top = 56
+            Width = 586
+            Caption = 'Klasifikovanie súčiastky'
+            ClientHeight = 117
+            ClientWidth = 584
+            TabOrder = 4
+            object Label14: TLabel
+              Left = 199
+              Height = 19
+              Top = 6
+              Width = 88
+              Caption = 'Základný tvar'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object cbSemiproductDimensions: TDBLookupComboBox
+              Left = 381
+              Height = 30
+              Top = 25
+              Width = 169
+              DataField = 'semiproduct_dimension_id'
+              DataSource = frmMain.dsProcess
+              KeyField = 'semiproduct_dimension_id'
+              ListField = 'dimension_name'
+              ListFieldIndex = 0
+              ListSource = frmMain.dsSemiproductDim
+              LookupCache = False
+              Style = csDropDownList
+              TabOrder = 2
+            end
+            object cbTechnology: TDBLookupComboBox
+              Left = 15
+              Height = 30
+              Top = 25
+              Width = 166
+              DataField = 'technology_id'
+              DataSource = frmMain.dsProcess
+              KeyField = 'technology_id'
+              ListField = 'technology_name'
+              ListFieldIndex = 0
+              ListSource = frmMain.dsTechnology
+              LookupCache = False
+              ScrollListDataset = True
+              Style = csDropDownList
+              TabOrder = 0
+            end
+            object Label13: TLabel
+              Left = 15
+              Height = 19
+              Top = 6
+              Width = 77
+              Caption = 'Technológia'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object Label17: TLabel
+              Left = 381
+              Height = 19
+              Top = 6
+              Width = 57
+              Caption = 'Rozmery'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object cbSemiproductType: TDBLookupComboBox
+              Left = 199
+              Height = 30
+              Top = 25
+              Width = 166
+              DataField = 'semiproduct_type_id'
+              DataSource = frmMain.dsProcess
+              KeyField = 'semiproduct_type_id'
+              ListField = 'type_name'
+              ListFieldIndex = 0
+              ListSource = frmMain.dsSemiproductType
+              LookupCache = False
+              Style = csDropDownList
+              TabOrder = 1
+            end
+            object cbSemiproductWeight: TDBLookupComboBox
+              Left = 15
+              Height = 30
+              Top = 79
+              Width = 159
+              DataField = 'semiproduct_weight_id'
+              DataSource = frmMain.dsProcess
+              KeyField = 'semiproduct_weight_id'
+              ListField = 'weight_type'
+              ListFieldIndex = 0
+              ListSource = frmMain.dsSemiproductWeight
+              LookupCache = False
+              Style = csDropDownList
+              TabOrder = 3
+            end
+            object Label18: TLabel
+              Left = 15
+              Height = 19
+              Top = 62
+              Width = 32
+              Caption = 'Váha'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+            object cbMaterial: TDBLookupComboBox
+              Left = 199
+              Height = 30
+              Top = 79
+              Width = 351
+              DataField = 'semiproduct_material_id'
+              DataSource = frmMain.dsProcess
+              KeyField = 'semiproduct_material_id'
+              ListField = 'material_name'
+              ListFieldIndex = 0
+              ListSource = frmMain.dsSemiproductMat
+              LookupCache = False
+              Style = csDropDownList
+              TabOrder = 4
+            end
+            object Label19: TLabel
+              Left = 199
+              Height = 19
+              Top = 62
+              Width = 52
+              Caption = 'Materiál'
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+        end
+      end
+    end
+    object tsTPOperations: TTabSheet
+      Caption = 'Operácie'
+      ClientHeight = 432
+      ClientWidth = 625
+      object gbOperations: TGroupBox
+        Left = 0
+        Height = 266
+        Top = 0
+        Width = 625
+        Align = alTop
+        Caption = 'Zoznam operácií'
+        ClientHeight = 247
+        ClientWidth = 623
+        TabOrder = 0
+        object ToolBar1: TToolBar
+          Left = 0
+          Height = 26
+          Top = 221
+          Width = 623
+          Align = alBottom
+          ButtonWidth = 22
+          Caption = 'ToolBar1'
+          Images = frmTemplates.ilOperationActions
+          TabOrder = 1
+          object btnOperationAdd: TToolButton
+            Left = 1
+            Top = 2
+            Caption = 'btnOperationAdd'
+            ImageIndex = 0
+            OnClick = btnOperationAddClick
+          end
+          object btnOperationEdit: TToolButton
+            Left = 27
+            Top = 2
+            Caption = 'btnOperationEdit'
+            ImageIndex = 1
+            OnClick = btnOperationEditClick
+          end
+          object btnOperationDelete: TToolButton
+            Left = 53
+            Top = 2
+            Caption = 'btnOperationDelete'
+            ImageIndex = 2
+            OnClick = btnOperationDeleteClick
+          end
+          object ToolButton4: TToolButton
+            Left = 79
+            Top = 2
+            Width = 10
+            Caption = 'ToolButton4'
+            Style = tbsSeparator
+          end
+          object btnTemplateImport: TSpeedButton
+            Left = 89
+            Height = 22
+            Top = 2
+            Width = 145
+            Caption = 'Importovať zo šablóny'
+            Flat = True
+            NumGlyphs = 0
+            OnClick = btnTemplateImportClick
+          end
+        end
+        object grdOperations: TDBGrid
+          Left = 6
+          Height = 209
+          Top = 6
+          Width = 611
+          Align = alClient
+          BorderSpacing.Around = 6
+          Color = clWindow
+          Columns = <          
+            item
+              Title.Caption = '#'
+              Width = 50
+              FieldName = 'operation_number'
+            end          
+            item
+              Title.Caption = 'Názov operácie'
+              Width = 160
+              FieldName = 'operation_name'
+            end          
+            item
+              Title.Caption = 'Stroj'
+              Width = 120
+              FieldName = 'machine_name'
+            end          
+            item
+              Title.Caption = 'Čas'
+              Width = 80
+              FieldName = 'operation_time'
+            end          
+            item
+              Title.Caption = 'Popis'
+              Width = 300
+              FieldName = 'operation_desc'
+            end>
+          DataSource = frmMain.dsOps
+          Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiselect]
+          TabOrder = 0
+          TitleStyle = tsNative
+          OnDrawColumnCell = grdOperationsDrawColumnCell
+          OnPrepareCanvas = grdOperationsPrepareCanvas
+        end
+      end
+      object PairSplitter1: TPairSplitter
+        Left = 0
+        Height = 166
+        Top = 266
+        Width = 625
+        Align = alClient
+        Position = 317
+        object PairSplitterSide1: TPairSplitterSide
+          Cursor = crArrow
+          Left = 0
+          Height = 166
+          Top = 0
+          Width = 317
+          ClientWidth = 317
+          ClientHeight = 166
+          object grdTools: TDBGrid
+            Left = 0
+            Height = 121
+            Top = 19
+            Width = 313
+            Align = alClient
+            BorderSpacing.Right = 4
+            Color = clWindow
+            Columns = <            
+              item
+                Title.Caption = 'Názov'
+                Width = 120
+                FieldName = 'tool_name'
+              end            
+              item
+                Title.Caption = 'Popis'
+                Width = 250
+                FieldName = 'tool_description'
+              end>
+            DataSource = frmMain.dsTools
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            TabOrder = 0
+            TitleStyle = tsNative
+            OnPrepareCanvas = grdToolsPrepareCanvas
+          end
+          object Label15: TLabel
+            Left = 0
+            Height = 19
+            Top = 0
+            Width = 317
+            Align = alTop
+            Caption = 'Nástroje'
+            ParentColor = False
+          end
+          object tbOperationToolActions: TToolBar
+            Left = 0
+            Height = 26
+            Top = 140
+            Width = 317
+            Align = alBottom
+            ButtonWidth = 22
+            Images = frmTemplates.ilOperationActions
+            TabOrder = 1
+            object btnToolAdd: TToolButton
+              Left = 1
+              Top = 2
+              Caption = 'btnToolAdd'
+              ImageIndex = 0
+              OnClick = btnToolAddClick
+            end
+            object btnToolDelete: TToolButton
+              Left = 27
+              Top = 2
+              Caption = 'btnToolDelete'
+              ImageIndex = 2
+              OnClick = btnToolDeleteClick
+            end
+          end
+        end
+        object PairSplitterSide2: TPairSplitterSide
+          Cursor = crArrow
+          Left = 322
+          Height = 166
+          Top = 0
+          Width = 303
+          ClientWidth = 303
+          ClientHeight = 166
+          object grdFixtures: TDBGrid
+            Left = 4
+            Height = 121
+            Top = 19
+            Width = 299
+            Align = alClient
+            BorderSpacing.Left = 4
+            Color = clWindow
+            Columns = <            
+              item
+                Title.Caption = 'Názov'
+                Width = 120
+                FieldName = 'fixture_name'
+              end            
+              item
+                Title.Caption = 'Popis'
+                Width = 250
+                FieldName = 'fixture_desc'
+              end>
+            DataSource = frmMain.dsFixtures
+            Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+            TabOrder = 0
+            TitleStyle = tsNative
+            OnPrepareCanvas = grdFixturesPrepareCanvas
+          end
+          object Label16: TLabel
+            Left = 0
+            Height = 19
+            Top = 0
+            Width = 303
+            Align = alTop
+            Caption = 'Prípravky'
+            ParentColor = False
+          end
+          object tbOperationFixtureActions: TToolBar
+            Left = 0
+            Height = 26
+            Top = 140
+            Width = 303
+            Align = alBottom
+            ButtonWidth = 22
+            Images = frmTemplates.ilOperationActions
+            TabOrder = 1
+            object btnFixtureAdd: TToolButton
+              Left = 1
+              Top = 2
+              Caption = 'ToolButton1'
+              ImageIndex = 0
+              OnClick = btnFixtureAddClick
+            end
+            object btnFixtureDelete: TToolButton
+              Left = 27
+              Top = 2
+              Caption = 'ToolButton2'
+              ImageIndex = 2
+              OnClick = btnFixtureDeleteClick
+            end
+          end
+        end
+      end
+    end
+  end
+end

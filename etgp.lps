@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <ProjectSession>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="51">
+      <Unit0>
+        <Filename Value="etgp.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="etgp"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="73" Y="16"/>
+        <UsageCount Value="200"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="umainform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UMainForm"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="0"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1295"/>
+        <CursorPos X="64" Y="1304"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="unitcisleniky.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselniky"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitCiselniky"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="19" Y="1"/>
+        <UsageCount Value="200"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="unitciselinikyadd.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselnikAdd"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UnitCiselinikyAdd"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="15" Y="1"/>
+        <UsageCount Value="200"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="upartcodingform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPartCoding"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UPartCodingForm"/>
+        <EditorIndex Value="2"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="65"/>
+        <CursorPos X="78" Y="72"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="uoptimaltpform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOptimalTP"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOptimalTPForm"/>
+        <EditorIndex Value="5"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="661"/>
+        <CursorPos X="21" Y="672"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="ucabstract.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCAbstract"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="4" Y="12"/>
+        <UsageCount Value="200"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="uciselnikdefaultform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselnikFormDefault"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCiselnikDefaultForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="26" Y="1"/>
+        <UsageCount Value="200"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="unitciselnikmachinedata.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="MachineData"/>
+        <ResourceBaseClass Value="DataModule"/>
+        <UnitName Value="UnitCiselnikMachineData"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="33" Y="20"/>
+        <UsageCount Value="200"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="ucfixture.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCFixture"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="209"/>
+        <CursorPos X="93" Y="220"/>
+        <UsageCount Value="200"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="ucoperationname.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCOperationName"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="184"/>
+        <CursorPos X="43" Y="196"/>
+        <UsageCount Value="201"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="uoperationnameform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCiselnikFormOperationName"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationNameForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3"/>
+        <CursorPos X="24" Y="1"/>
+        <UsageCount Value="201"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="usettings.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmSettings"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="USettings"/>
+        <EditorIndex Value="9"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="35"/>
+        <CursorPos X="3" Y="58"/>
+        <UsageCount Value="201"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="utools.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UTools"/>
+        <EditorIndex Value="3"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="44"/>
+        <CursorPos X="1" Y="64"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="utemplatesform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTemplates"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTemplatesForm"/>
+        <EditorIndex Value="1"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="220"/>
+        <CursorPos X="3" Y="220"/>
+        <UsageCount Value="212"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="utemplateeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTemplateEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTemplateEditForm"/>
+        <EditorIndex Value="6"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="23" Y="1"/>
+        <UsageCount Value="205"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="utpoperationeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTPOperationEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTPOperationEditForm"/>
+        <EditorIndex Value="7"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="29"/>
+        <CursorPos X="3" Y="41"/>
+        <UsageCount Value="200"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="uoperationtooleditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOperationTool"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationToolEditForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="203"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="uoperationfixtureeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOperationFixtureEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationFixtureEditForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="3" Y="50"/>
+        <UsageCount Value="200"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="ucompaniesform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCompanies"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCompaniesForm"/>
+        <EditorIndex Value="4"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="184"/>
+        <CursorPos X="1" Y="187"/>
+        <UsageCount Value="202"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="ucompanyeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCompanyEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCompanyEditForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="37"/>
+        <CursorPos X="3" Y="56"/>
+        <UsageCount Value="201"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="ucompany.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="UCompany"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="3" Y="16"/>
+        <UsageCount Value="202"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="uoperationeditform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmOperationEdit"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UOperationEditForm"/>
+        <EditorIndex Value="8"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="23"/>
+        <CursorPos X="17" Y="46"/>
+        <UsageCount Value="178"/>
+        <Loaded Value="True"/>
+        <LoadedDesigner Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="utemplatechooseform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmTemplateChoose"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UTemplateChooseForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="27"/>
+        <CursorPos X="56" Y="46"/>
+        <UsageCount Value="110"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="uprogressform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmProgress"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UProgressForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="19" Y="1"/>
+        <UsageCount Value="28"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="uaboutform.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmAbout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UAboutForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="26"/>
+      </Unit25>
+      <Unit26>
+        <Filename Value="uctool.pas"/>
+        <UnitName Value="UCTool"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="209"/>
+        <CursorPos X="8" Y="222"/>
+        <UsageCount Value="113"/>
+      </Unit26>
+      <Unit27>
+        <Filename Value="utemplate.pas"/>
+        <UnitName Value="UTemplate"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4"/>
+        <CursorPos X="26" Y="15"/>
+        <UsageCount Value="68"/>
+      </Unit27>
+      <Unit28>
+        <Filename Value="uoperation.pas"/>
+        <UnitName Value="UOperation"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="140"/>
+        <CursorPos X="9" Y="160"/>
+        <UsageCount Value="64"/>
+      </Unit28>
+      <Unit29>
+        <Filename Value="uciselnikyform.pas"/>
+        <ComponentName Value="frmCiselniky"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCiselnikyForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="113"/>
+        <CursorPos X="3" Y="87"/>
+        <UsageCount Value="24"/>
+      </Unit29>
+      <Unit30>
+        <Filename Value="uciselnikyaddform.pas"/>
+        <ComponentName Value="frmCiselnikAdd"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="UCiselnikyAddForm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="12"/>
+        <CursorPos X="1" Y="35"/>
+        <UsageCount Value="15"/>
+      </Unit30>
+      <Unit31>
+        <Filename Value="/usr/share/fpcsrc/packages/fcl-db/src/base/db.pas"/>
+        <UnitName Value="db"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="36"/>
+        <CursorPos X="48" Y="49"/>
+        <UsageCount Value="11"/>
+      </Unit31>
+      <Unit32>
+        <Filename Value="ucmachine.pas"/>
+        <UnitName Value="UCMachine"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="230"/>
+        <CursorPos X="74" Y="218"/>
+        <UsageCount Value="26"/>
+      </Unit32>
+      <Unit33>
+        <Filename Value="/usr/lib/lazarus/lcl/dbgrids.pas"/>
+        <UnitName Value="DBGrids"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="487"/>
+        <CursorPos X="3" Y="500"/>
+        <UsageCount Value="0"/>
+      </Unit33>
+      <Unit34>
+        <Filename Value="unitciselnikformdefault.lfm"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="1"/>
+        <DefaultSyntaxHighlighter Value="LFM"/>
+      </Unit34>
+      <Unit35>
+        <Filename Value="/usr/share/fpcsrc/packages/fcl-base/src/inifiles.pp"/>
+        <UnitName Value="IniFiles"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="167"/>
+        <CursorPos X="14" Y="178"/>
+        <UsageCount Value="1"/>
+      </Unit35>
+      <Unit36>
+        <Filename Value="/usr/share/fpcsrc/packages/fcl-base/src/contnrs.pp"/>
+        <UnitName Value="contnrs"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="60"/>
+        <CursorPos X="3" Y="72"/>
+        <UsageCount Value="1"/>
+      </Unit36>
+      <Unit37>
+        <Filename Value="../../../../Data2/Development/lazarus/components/zeosdb/src/component/ZAbstractRODataset.pas"/>
+        <UnitName Value="ZAbstractRODataset"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="595"/>
+        <CursorPos X="1" Y="615"/>
+        <UsageCount Value="7"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit37>
+      <Unit38>
+        <Filename Value="../DBDateEdit/dbdateedit.pas"/>
+        <UnitName Value="DBDateEdit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="13" Y="10"/>
+        <UsageCount Value="5"/>
+      </Unit38>
+      <Unit39>
+        <Filename Value="/usr/lib/lazarus/lcl/dbctrls.pp"/>
+        <UnitName Value="DbCtrls"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="173"/>
+        <CursorPos X="43" Y="178"/>
+        <UsageCount Value="5"/>
+      </Unit39>
+      <Unit40>
+        <Filename Value="/usr/lib/lazarus/lcl/include/dbedit.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="54"/>
+        <CursorPos X="1" Y="58"/>
+        <UsageCount Value="5"/>
+      </Unit40>
+      <Unit41>
+        <Filename Value="/usr/lib/lazarus/lcl/maskedit.pp"/>
+        <UnitName Value="MaskEdit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="243"/>
+        <CursorPos X="15" Y="254"/>
+        <UsageCount Value="5"/>
+      </Unit41>
+      <Unit42>
+        <Filename Value="../DBDateEdit/mydbdateedit.pas"/>
+        <UnitName Value="MyDBDateEdit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="1"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="5"/>
+      </Unit42>
+      <Unit43>
+        <Filename Value="/usr/share/fpcsrc/rtl/objpas/sysutils/sysstrh.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="30"/>
+        <CursorPos X="16" Y="130"/>
+        <UsageCount Value="0"/>
+      </Unit43>
+      <Unit44>
+        <Filename Value="/usr/share/fpcsrc/rtl/objpas/sysutils/sysinth.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="48"/>
+        <CursorPos X="3" Y="33"/>
+        <UsageCount Value="0"/>
+      </Unit44>
+      <Unit45>
+        <Filename Value="../../../Develpoment/lazarus/components/zeoslib/src/core/ZExprParser.pas"/>
+        <UnitName Value="ZExprParser"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="201"/>
+        <CursorPos X="43" Y="201"/>
+        <UsageCount Value="0"/>
+      </Unit45>
+      <Unit46>
+        <Filename Value="/usr/lib64/lazarus/lcl/controls.pp"/>
+        <UnitName Value="Controls"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="4057"/>
+        <CursorPos X="29" Y="4077"/>
+        <UsageCount Value="0"/>
+      </Unit46>
+      <Unit47>
+        <Filename Value="/usr/lib/lazarus/lcl/include/control.inc"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="3168"/>
+        <CursorPos X="1" Y="3180"/>
+        <UsageCount Value="3"/>
+      </Unit47>
+      <Unit48>
+        <Filename Value="/usr/lib/lazarus/components/lazreport/samples/barcode/cbunit.pas"/>
+        <ComponentName Value="Form1"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="cbunit"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="28"/>
+        <CursorPos X="1" Y="1"/>
+        <UsageCount Value="14"/>
+      </Unit48>
+      <Unit49>
+        <Filename Value="/usr/lib/lazarus/components/lazreport/source/lr_class.pas"/>
+        <UnitName Value="LR_Class"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="8787"/>
+        <CursorPos X="1" Y="8799"/>
+        <UsageCount Value="9"/>
+      </Unit49>
+      <Unit50>
+        <Filename Value="/lib/lazarus/components/lazreport/source/addons/pdfexport/lr_e_pdf.pas"/>
+        <UnitName Value="lr_e_pdf"/>
+        <WindowIndex Value="0"/>
+        <TopLine Value="26"/>
+        <CursorPos X="19" Y="37"/>
+        <UsageCount Value="9"/>
+      </Unit50>
+    </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="0"/>
+    </General>
+    <JumpHistory Count="28" HistoryIndex="27">
+      <Position1>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1017" Column="3" TopLine="1015"/>
+      </Position1>
+      <Position2>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="846" Column="29" TopLine="844"/>
+      </Position2>
+      <Position3>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1023" Column="3" TopLine="1023"/>
+      </Position3>
+      <Position4>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1020" Column="3" TopLine="1017"/>
+      </Position4>
+      <Position5>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1026" Column="17" TopLine="1023"/>
+      </Position5>
+      <Position6>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1326" Column="72" TopLine="1315"/>
+      </Position6>
+      <Position7>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="850" Column="22" TopLine="846"/>
+      </Position7>
+      <Position8>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="622" Column="30" TopLine="622"/>
+      </Position8>
+      <Position9>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1029" Column="30" TopLine="1025"/>
+      </Position9>
+      <Position10>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1031" Column="3" TopLine="1028"/>
+      </Position10>
+      <Position11>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1343" Column="28" TopLine="1334"/>
+      </Position11>
+      <Position12>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1350" Column="28" TopLine="1341"/>
+      </Position12>
+      <Position13>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1014" Column="21" TopLine="995"/>
+      </Position13>
+      <Position14>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1016" Column="21" TopLine="997"/>
+      </Position14>
+      <Position15>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1207" Column="66" TopLine="1195"/>
+      </Position15>
+      <Position16>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1208" Column="18" TopLine="1196"/>
+      </Position16>
+      <Position17>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1208" Column="18" TopLine="1196"/>
+      </Position17>
+      <Position18>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="52" Column="5" TopLine="41"/>
+      </Position18>
+      <Position19>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1208" Column="43" TopLine="1196"/>
+      </Position19>
+      <Position20>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="751" Column="92" TopLine="734"/>
+      </Position20>
+      <Position21>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1207" Column="3" TopLine="1205"/>
+      </Position21>
+      <Position22>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="1206" Column="3" TopLine="1204"/>
+      </Position22>
+      <Position23>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="852" Column="1" TopLine="850"/>
+      </Position23>
+      <Position24>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="382" Column="3" TopLine="382"/>
+      </Position24>
+      <Position25>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="253" Column="28" TopLine="241"/>
+      </Position25>
+      <Position26>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="362" Column="30" TopLine="343"/>
+      </Position26>
+      <Position27>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="553" Column="34" TopLine="534"/>
+      </Position27>
+      <Position28>
+        <Filename Value="umainform.pas"/>
+        <Caret Line="665" Column="30" TopLine="646"/>
+      </Position28>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>

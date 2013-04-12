@@ -1,0 +1,214 @@
+object frmCompanies: TfrmCompanies
+  Left = 271
+  Height = 474
+  Top = 229
+  Width = 538
+  BorderStyle = bsDialog
+  Caption = 'Správa odberateľov'
+  ClientHeight = 474
+  ClientWidth = 538
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object GroupBox1: TGroupBox
+    Left = 6
+    Height = 418
+    Top = 6
+    Width = 526
+    Align = alTop
+    BorderSpacing.Around = 6
+    Caption = 'Odberatelia'
+    ClientHeight = 396
+    ClientWidth = 524
+    TabOrder = 0
+    object grdCompanies: TDBGrid
+      Left = 6
+      Height = 179
+      Top = 6
+      Width = 512
+      Align = alClient
+      AutoEdit = False
+      BorderSpacing.Around = 6
+      Color = clWindow
+      Columns = <      
+        item
+          Title.Caption = 'Názov'
+          Width = 160
+          FieldName = 'company_name'
+        end      
+        item
+          Title.Caption = 'Ulica'
+          Width = 120
+          FieldName = 'street'
+        end      
+        item
+          Title.Caption = 'Mesto'
+          Width = 100
+          FieldName = 'city'
+        end      
+        item
+          Title.Caption = 'PSČ'
+          Width = 60
+          FieldName = 'psc'
+        end      
+        item
+          Title.Caption = 'Štát'
+          Width = 120
+          FieldName = 'state'
+        end      
+        item
+          Title.Caption = 'IČO'
+          Width = 100
+          FieldName = 'ico'
+        end      
+        item
+          Title.Caption = 'DIČ'
+          Width = 100
+          FieldName = 'dic'
+        end      
+        item
+          Title.Caption = 'Telefón'
+          Width = 80
+          FieldName = 'phone'
+        end>
+      DataSource = frmMain.dsCompanies
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+      Scrollbars = ssAutoBoth
+      TabOrder = 0
+      TitleStyle = tsNative
+    end
+    object tbActions: TToolBar
+      Left = 0
+      Height = 26
+      Top = 191
+      Width = 524
+      Align = alBottom
+      Caption = 'tbActions'
+      Images = frmTemplates.ilOperationActions
+      TabOrder = 1
+      object btnAdd: TToolButton
+        Left = 1
+        Top = 2
+        Caption = 'btnAdd'
+        ImageIndex = 0
+        OnClick = btnAddClick
+      end
+      object btnEdit: TToolButton
+        Left = 27
+        Top = 2
+        Caption = 'btnEdit'
+        ImageIndex = 1
+        OnClick = btnEditClick
+      end
+      object btnDelete: TToolButton
+        Left = 53
+        Top = 2
+        Caption = 'btnDelete'
+        ImageIndex = 2
+        OnClick = btnDeleteClick
+      end
+    end
+    object gbFilter: TDBGroupBox
+      Left = 6
+      Height = 167
+      Top = 223
+      Width = 512
+      Align = alBottom
+      BorderSpacing.Around = 6
+      Caption = 'Filter'
+      ClientHeight = 145
+      ClientWidth = 510
+      TabOrder = 2
+      object Label1: TLabel
+        Left = 21
+        Height = 22
+        Top = 2
+        Width = 42
+        Caption = 'Názov'
+        ParentColor = False
+      end
+      object edtFilterName: TEdit
+        Left = 21
+        Height = 33
+        Top = 19
+        Width = 141
+        OnKeyUp = edtFilterNameKeyUp
+        TabOrder = 0
+      end
+      object edtFilterStreet: TEdit
+        Left = 178
+        Height = 33
+        Top = 19
+        Width = 144
+        OnKeyUp = edtFilterNameKeyUp
+        TabOrder = 1
+      end
+      object Label2: TLabel
+        Left = 178
+        Height = 22
+        Top = 2
+        Width = 33
+        Caption = 'Ulica'
+        ParentColor = False
+      end
+      object Label3: TLabel
+        Left = 338
+        Height = 22
+        Top = 2
+        Width = 42
+        Caption = 'Mesto'
+        ParentColor = False
+      end
+      object edtFilterCity: TEdit
+        Left = 338
+        Height = 33
+        Top = 19
+        Width = 141
+        OnKeyUp = edtFilterNameKeyUp
+        TabOrder = 2
+      end
+      object Label4: TLabel
+        Left = 21
+        Height = 22
+        Top = 57
+        Width = 29
+        Caption = 'PSČ'
+        ParentColor = False
+      end
+      object edtFilterPSC: TEdit
+        Left = 21
+        Height = 33
+        Top = 74
+        Width = 69
+        OnKeyUp = edtFilterNameKeyUp
+        TabOrder = 3
+      end
+      object edtFilterState: TEdit
+        Left = 106
+        Height = 33
+        Top = 74
+        Width = 141
+        OnKeyUp = edtFilterNameKeyUp
+        TabOrder = 4
+      end
+      object Label5: TLabel
+        Left = 106
+        Height = 22
+        Top = 57
+        Width = 29
+        Caption = 'Štát'
+        ParentColor = False
+      end
+    end
+  end
+  object btnClose: TBitBtn
+    Left = 440
+    Height = 30
+    Top = 432
+    Width = 75
+    Caption = 'Zavrieť'
+    ModalResult = 11
+    TabOrder = 1
+  end
+end

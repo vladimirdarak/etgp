@@ -1,0 +1,1924 @@
+object frmMain: TfrmMain
+  Left = 250
+  Height = 553
+  Top = 171
+  Width = 891
+  Caption = 'eTGP'
+  ClientHeight = 529
+  ClientWidth = 891
+  KeyPreview = True
+  Menu = mmGlobal
+  OnActivate = FormActivate
+  OnClose = FormClose
+  OnCreate = FormCreate
+  OnDeactivate = FormDeactivate
+  OnShow = FormShow
+  Position = poScreenCenter
+  LCLVersion = '1.0.4.0'
+  object gridProcess: TDBGrid
+    Left = 0
+    Height = 382
+    Top = 26
+    Width = 891
+    Align = alClient
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'Odberateľ'
+        Width = 180
+        FieldName = 'company_name'
+      end    
+      item
+        Title.Caption = 'Názov súčiastky'
+        Width = 180
+        FieldName = 'part_name'
+      end    
+      item
+        Title.Caption = 'Číslo výkresu'
+        Width = 160
+        FieldName = 'drawing_number'
+      end    
+      item
+        Title.Caption = 'Dátum zadania'
+        Width = 120
+        FieldName = 'date_of_assigment'
+      end    
+      item
+        Title.Caption = 'Dátum vyhotovenia'
+        Width = 120
+        FieldName = 'date_of_issue'
+      end    
+      item
+        Title.Caption = 'Vyhotovil'
+        Width = 160
+        FieldName = 'created'
+      end    
+      item
+        Title.Caption = 'Skontroloval'
+        Width = 160
+        FieldName = 'checked'
+      end    
+      item
+        Title.Caption = 'Schválil'
+        Width = 160
+        FieldName = 'approved'
+      end>
+    DataSource = dsProcess
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColumnMove, dgColLines, dgRowLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit]
+    PopupMenu = menuActionsProcess
+    ReadOnly = True
+    Scrollbars = ssAutoBoth
+    TabOrder = 0
+    TitleStyle = tsNative
+    OnDblClick = gridProcessDblClick
+    OnKeyUp = gridProcessKeyUp
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 20
+    Top = 509
+    Width = 891
+    Panels = <>
+  end
+  object pnlActions: TPanel
+    Left = 0
+    Height = 101
+    Top = 408
+    Width = 891
+    Align = alBottom
+    ClientHeight = 101
+    ClientWidth = 891
+    TabOrder = 2
+    object gbActions: TGroupBox
+      Left = 7
+      Height = 87
+      Top = 7
+      Width = 877
+      Align = alClient
+      BorderSpacing.Around = 6
+      Caption = 'Filter'
+      ClientHeight = 68
+      ClientWidth = 875
+      TabOrder = 0
+      object ScrollBox1: TScrollBox
+        Left = 0
+        Height = 68
+        Top = 0
+        Width = 875
+        HorzScrollBar.Page = 875
+        VertScrollBar.Page = 68
+        Align = alClient
+        BorderStyle = bsNone
+        ClientHeight = 68
+        ClientWidth = 875
+        TabOrder = 0
+        object edtFilterCompany: TLabeledEdit
+          Left = 16
+          Height = 30
+          Top = 23
+          Width = 168
+          EditLabel.AnchorSideLeft.Control = edtFilterCompany
+          EditLabel.AnchorSideRight.Control = edtFilterCompany
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtFilterCompany
+          EditLabel.Left = 16
+          EditLabel.Height = 19
+          EditLabel.Top = 1
+          EditLabel.Width = 168
+          EditLabel.Caption = 'Odberateľ'
+          EditLabel.ParentColor = False
+          TabOrder = 0
+          OnChange = edtFilterCompanyChange
+          OnKeyUp = edtFilterCompanyKeyUp
+        end
+        object edtFilterPart: TLabeledEdit
+          Left = 200
+          Height = 30
+          Top = 23
+          Width = 168
+          EditLabel.AnchorSideLeft.Control = edtFilterPart
+          EditLabel.AnchorSideRight.Control = edtFilterPart
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtFilterPart
+          EditLabel.Left = 200
+          EditLabel.Height = 19
+          EditLabel.Top = 1
+          EditLabel.Width = 168
+          EditLabel.Caption = 'Názov súčiastky'
+          EditLabel.ParentColor = False
+          TabOrder = 1
+          OnChange = edtFilterCompanyChange
+          OnKeyUp = edtFilterPartKeyUp
+        end
+        object edtFilterDrawing: TLabeledEdit
+          Left = 384
+          Height = 30
+          Top = 23
+          Width = 168
+          EditLabel.AnchorSideLeft.Control = edtFilterDrawing
+          EditLabel.AnchorSideRight.Control = edtFilterDrawing
+          EditLabel.AnchorSideRight.Side = asrBottom
+          EditLabel.AnchorSideBottom.Control = edtFilterDrawing
+          EditLabel.Left = 384
+          EditLabel.Height = 19
+          EditLabel.Top = 1
+          EditLabel.Width = 168
+          EditLabel.Caption = 'Číslo výkresu'
+          EditLabel.ParentColor = False
+          TabOrder = 2
+          OnChange = edtFilterCompanyChange
+          OnKeyUp = edtFilterPartKeyUp
+        end
+      end
+    end
+  end
+  object ToolBar2: TToolBar
+    Left = 0
+    Height = 26
+    Top = 0
+    Width = 891
+    ButtonWidth = 22
+    Caption = 'ToolBar2'
+    Images = frmTemplates.ilOperationActions
+    TabOrder = 3
+    object btnAddTP: TToolButton
+      Left = 1
+      Top = 2
+      Caption = 'btnAddTP'
+      ImageIndex = 3
+      OnClick = btnAddTPClick
+    end
+    object ToolButton2: TToolButton
+      Left = 27
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton2'
+      Style = tbsSeparator
+    end
+    object btnAddOTP: TToolButton
+      Left = 37
+      Top = 2
+      Caption = 'btnAddOTP'
+      ImageIndex = 0
+      OnClick = btnAddOTPClick
+    end
+    object btnEditTP: TToolButton
+      Left = 63
+      Top = 2
+      Caption = 'btnEditTP'
+      ImageIndex = 1
+      OnClick = btnEditTPClick
+    end
+    object btnDeleteTP: TToolButton
+      Left = 89
+      Top = 2
+      Caption = 'btnDeleteTP'
+      ImageIndex = 2
+      OnClick = btnDeleteTPClick
+    end
+    object ToolButton1: TToolButton
+      Left = 115
+      Top = 2
+      Width = 10
+      Caption = 'ToolButton1'
+      Style = tbsSeparator
+    end
+    object ToolButton3: TToolButton
+      Left = 125
+      Top = 2
+      Caption = 'ToolButton3'
+      ImageIndex = 4
+      OnClick = ToolButton3Click
+    end
+  end
+  object dbConnection: TZConnection
+    ControlsCodePage = cCP_UTF8
+    UTF8StringsAsWideField = False
+    AutoEncodeStrings = False
+    Catalog = 'tgp'
+    Properties.Strings = (
+      'AutoEncodeStrings='
+    )
+    TransactIsolationLevel = tiSerializable
+    Connected = True
+    HostName = 'localhost'
+    Port = 5432
+    Database = 'tgp'
+    User = 'tgp'
+    Password = 'Vlado_28'
+    Protocol = 'postgresql-9'
+    left = 32
+    top = 192
+  end
+  object mmGlobal: TMainMenu
+    left = 144
+    top = 64
+    object itmFile: TMenuItem
+      Caption = 'Súbor'
+      object itmNew: TMenuItem
+        Caption = 'Nová objednávka ...'
+        ShortCut = 16462
+        OnClick = itmNewClick
+      end
+      object MenuItem2: TMenuItem
+        Caption = '-'
+      end
+      object itmNewOTP: TMenuItem
+        Caption = 'Nový TP ...'
+        ShortCut = 24654
+        OnClick = itmNewOTPClick
+      end
+      object itmEditTP: TMenuItem
+        Caption = 'Upraviť TP ...'
+        ShortCut = 24645
+        OnClick = itmEditTPClick
+      end
+      object itmDeleteTP: TMenuItem
+        Caption = 'Zmazať TP'
+        ShortCut = 24644
+        OnClick = itmDeleteTPClick
+      end
+      object MenuItem3: TMenuItem
+        Caption = '-'
+      end
+      object itmPrint: TMenuItem
+        Caption = 'Tlačiť ...'
+        OnClick = itmPrintClick
+      end
+      object itmSepar: TMenuItem
+        Caption = '-'
+      end
+      object itmClose: TMenuItem
+        Caption = 'Zavrieť'
+        ShortCut = 16465
+        OnClick = itmCloseClick
+      end
+    end
+    object itmTools: TMenuItem
+      Caption = 'Nástroje'
+      object itmCiselniky: TMenuItem
+        Caption = 'Číselníky ...'
+        OnClick = itmCiselnikyClick
+      end
+      object itmTemplates: TMenuItem
+        Caption = 'Šablóny ...'
+        OnClick = itmTemplatesClick
+      end
+      object itmCompany: TMenuItem
+        Caption = 'Odberatelia ...'
+        OnClick = itmCompanyClick
+      end
+      object MenuItem1: TMenuItem
+        Caption = '-'
+      end
+      object itmSettings: TMenuItem
+        Caption = 'Nastavenia ...'
+        OnClick = itmSettingsClick
+      end
+    end
+    object itmHelp: TMenuItem
+      Caption = 'Pomoc'
+      object itmAbout: TMenuItem
+        Caption = 'O programe ...'
+        OnClick = itmAboutClick
+      end
+    end
+  end
+  object menuActionsProcess: TPopupMenu
+    left = 144
+    top = 120
+    object itmEdit: TMenuItem
+      Caption = 'Upraviť'
+      ShortCut = 16469
+    end
+  end
+  object ilPopupActions: TImageList
+    Height = 22
+    Width = 22
+    left = 344
+    top = 192
+    Bitmap = {
+      4C69020000001600000016000000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A86B3B81A56636FBA465
+      34FFA56636FBA86B3B81FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00A56635FBDCC1AAFFDEC5B0FFCEA98AFFA264
+      33FBFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00A46534FFDCC2ABFFC79E7BFFCCA686FF9F6030FFFFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A162
+      32FFD8BAA2FFC0926DFFC59B79FF9C5E2FFFFFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009F6030FFD3B39AFFBA87
+      5EFFBF916CFF995B2DFFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A4653581A263
+      33FBA06131FF9E6030FF9D5F2FFFA3673BF7CEAB8FFFB17B50FFB9865FFF9B5D
+      31F795572AFF945629FF935528FF915428FB92552A81FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00A06231FBC8A182FFCBA78AFFCBA7
+      8AFFCAA689FFCAA486FFBA8A65FFAA6F41FFAE7549FFC59C7DFFC8A284FFC8A2
+      83FFC8A182FFC09775FF8D5025FBFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF009D5E2FFFC49B7AFFA76A3BFFA76939FFA66838FFA467
+      36FFA46534FFA56635FFA56736FFA66837FFA76939FFA86A3AFFA96A3AFFB179
+      4CFF8B4D23FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF009A5C2DFBAE7547FFB1794CFFB17A4DFFB17A4DFFB27A4EFFAF7446FFAB6E
+      3CFFB07547FFB47D51FFB57E52FFB57E52FFB67F53FFB27B4DFF884B22FBFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00985B2B819658
+      2BFB95572AFF945629FF925528FF96572BF7CBA280FFB17645FFBA8357FF9153
+      28F78B4D22FF894C22FF884B21FF874A21FB8A4D2481FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000000100000002000000020000
+      0002000000028E5125FFD1AC8DFFB97E4DFFBF8B5EFF894C21FF000000020000
+      0002000000020000000200000001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF000000000200000004000000080000000A0000000B0000000B8C4E
+      23FFD5B192FFBF8654FFC49265FF874A20FF0000000B0000000B0000000A0000
+      00080000000400000002FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      00030000000A0000001300000017000000190000001C894C21FFDAB696FFC48E
+      5CFFCB986CFF874A20FF0000001C0000001900000017000000130000000A0000
+      0003FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000030000000A0000
+      0013000000190000001C00000026884B20FCD7B08FFFCF9E71FFC99669FF884B
+      20FC000000260000001C00000019000000130000000A00000003FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF000000000100000004000000090000000C0000
+      00110000002072411F9D884B20FC874A20FF884B20FC72411F9D000000200000
+      00110000000C000000090000000400000001FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0000000001000000020000000300000006000000120000
+      00240000002F000000310000002F000000240000001200000006000000030000
+      000200000001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF0000000002000000060000000D000000110000
+      0012000000110000000D0000000600000002FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF0000000001000000020000000300000003000000030000
+      000200000001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00A4653581A26333FBA06131FF9E6030FF9D5F2FFF9C5D
+      2EFF9B5C2DFF995B2DFF985A2CFF97592BFF95572AFF945629FF935528FF9154
+      28FB92552A81FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00A06231FBC69E7FFFCAA588FFCAA487FFC9A386FFC9A284FFC8A283FFC7A0
+      82FFC7A080FFC69E7FFFC59D7FFFC59D7DFFC49B7BFFBE926FFF8D5025FBFFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009D5E2FFFC298
+      77FFA76A3BFFA66938FFA56837FFA46736FFA46635FFA56736FFA56837FFA668
+      37FFA66938FFA76A39FFA86A39FFAB6F40FF8B4D23FFFFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009A5C2DFBAC7142FFAD7345FFAE74
+      46FFAE7445FFAF7446FFAF7446FFAF7545FFB07445FFB07546FFB07647FFB075
+      46FFB17546FFAD7242FF884B22FBFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00985B2B8196582BFB95572AFF945629FF925528FF9153
+      27FF905226FF8E5125FF8D5024FF8C4E23FF8B4D22FF894C22FF884B21FF874A
+      21FB8A4D2481FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00000000010000000200000002000000020000000200000002000000020000
+      000200000002000000020000000200000002000000020000000200000001FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0000000002000000040000
+      00080000000A0000000A0000000B0000000B0000000B0000000B0000000B0000
+      000B0000000B0000000A0000000A000000080000000400000002FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00000000030000000A00000013000000170000
+      0018000000180000001800000018000000180000001800000018000000180000
+      001800000017000000130000000A00000003FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00000000030000000A00000013000000180000001A0000001A0000
+      001A0000001A0000001A0000001A0000001A0000001A0000001A000000180000
+      00130000000A00000003FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF000000
+      000100000004000000090000000B0000000C0000000C0000000C0000000C0000
+      000C0000000C0000000C0000000C0000000C0000000B00000009000000040000
+      0001FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00000000010000
+      0002000000020000000200000002000000020000000200000002000000020000
+      00020000000200000002000000020000000200000001FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+      FF00FFFFFF00FFFFFF00FFFFFF00
+    }
+  end
+  object qryCompanies: TZQuery
+    Connection = dbConnection
+    SortedFields = 'company_name'
+    SQL.Strings = (
+      'SELECT * FROM company WHERE is_root = :is_root'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'is_root'
+        ParamType = ptUnknown
+      end>
+    IndexFieldNames = 'company_name Asc'
+    left = 432
+    top = 136
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'is_root'
+        ParamType = ptUnknown
+      end>
+    object qryCompaniescompany_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'company_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryCompaniescompany_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'company_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qryCompaniesstreet: TStringField
+      DisplayWidth = 800
+      FieldKind = fkData
+      FieldName = 'street'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object qryCompaniespsc: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'psc'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryCompaniescity: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'city'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryCompaniesstate: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'state'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryCompaniesico: TStringField
+      DisplayWidth = 48
+      FieldKind = fkData
+      FieldName = 'ico'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 48
+    end
+    object qryCompaniesdic: TStringField
+      DisplayWidth = 48
+      FieldKind = fkData
+      FieldName = 'dic'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 48
+    end
+    object qryCompaniesphone: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'phone'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryCompaniesphone1: TStringField
+      DisplayWidth = 80
+      FieldKind = fkData
+      FieldName = 'phone1'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 80
+    end
+    object qryCompaniesemail: TStringField
+      DisplayWidth = 200
+      FieldKind = fkData
+      FieldName = 'email'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qryCompaniesis_root: TBooleanField
+      DisplayWidth = 5
+      FieldKind = fkData
+      FieldName = 'is_root'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      DisplayValues = 'True;False'
+    end
+  end
+  object dsCompanies: TDatasource
+    AutoEdit = False
+    DataSet = qryCompanies
+    left = 433
+    top = 192
+  end
+  object qryProcess: TZQuery
+    Connection = dbConnection
+    AfterScroll = qryProcessAfterScroll
+    UpdateObject = updProcess
+    SQL.Strings = (
+      'SELECT tp.*, c.company_name, c.street, c.psc, c.city, t.technology_name, st.type_name, sd.dimension_name, sm.material_name, sw.weight_type'
+      'FROM technological_process tp'
+      '   LEFT JOIN company c ON tp.company_id = c.company_id'
+      '   LEFT JOIN technology t ON tp.technology_id = t.technology_id'
+      '   LEFT JOIN semiproduct_type st ON tp.semiproduct_type_id = st.semiproduct_type_id'
+      '   LEFT JOIN semiproduct_dimension sd ON tp.semiproduct_dimension_id = sd.semiproduct_dimension_id'
+      '   LEFT JOIN semiproduct_material sm ON tp.semiproduct_material_id = sm.semiproduct_material_id'
+      '   LEFT JOIN semiproduct_weight sw ON tp.semiproduct_weight_id = sw.semiproduct_weight_id'
+    )
+    Params = <>
+    left = 528
+    top = 136
+    object qryProcesstechnological_process_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'technological_process_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryProcessgt_code: TStringField
+      DisplayWidth = 160
+      FieldKind = fkData
+      FieldName = 'gt_code'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 160
+    end
+    object qryProcesspart_name: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'part_name'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qryProcessdrawing_number: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'drawing_number'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 400
+    end
+    object qryProcessquantity: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quantity'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcessdate_of_assigment: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'date_of_assigment'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcessdate_of_issue: TDateField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'date_of_issue'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesscreated: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'created'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qryProcessapproved: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'approved'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryProcesschecked: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'checked'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryProcessdescription: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'description'
+      Index = 10
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qryProcesssemiproduct_weight_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_weight_id'
+      Index = 11
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesssemiproduct_material_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_material_id'
+      Index = 12
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesssemiproduct_dimension_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_dimension_id'
+      Index = 13
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesstolerance_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tolerance_id'
+      Index = 14
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcessquality_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'quality_id'
+      Index = 15
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesscompany_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'company_id'
+      Index = 16
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesssemiproduct_type_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_type_id'
+      Index = 17
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesstechnology_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'technology_id'
+      Index = 18
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryProcesspart_weight: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'part_weight'
+      Index = 19
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 4
+    end
+    object qryProcesscompany_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'company_name'
+      Index = 20
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qryProcessstreet: TStringField
+      DisplayWidth = 800
+      FieldKind = fkData
+      FieldName = 'street'
+      Index = 21
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 800
+    end
+    object qryProcesspsc: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'psc'
+      Index = 22
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qryProcesscity: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'city'
+      Index = 23
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryProcesstechnology_name: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'technology_name'
+      Index = 24
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+    object qryProcesstype_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'type_name'
+      Index = 25
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qryProcessdimension_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'dimension_name'
+      Index = 26
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qryProcessmaterial_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'material_name'
+      Index = 27
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qryProcessweight_type: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'weight_type'
+      Index = 28
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+  end
+  object dsProcess: TDatasource
+    AutoEdit = False
+    DataSet = qryProcess
+    left = 528
+    top = 200
+  end
+  object updProcess: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM operation_fixture '
+      'WHERE operation_id IN (SELECT operation_id FROM operation WHERE technological_process_id = :technological_process_id );'
+      'DELETE FROM operation_tool '
+      'WHERE operation_id IN (SELECT operation_id FROM operation WHERE technological_process_id = :technological_process_id );'
+      'DELETE FROM operation_tool WHERE operation_id = :operation_id;'
+      'DELETE FROM operation WHERE technological_process_id = :technological_process_id;'
+      'DELETE FROM technological_process'
+      'WHERE technological_process_id = :technological_process_id;'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO technological_process'
+      '(technological_process_id,'
+      'gt_code,'
+      'part_name,'
+      'drawing_number,'
+      'quantity,'
+      'date_of_assigment,'
+      'date_of_issue,'
+      'created,'
+      'approved,'
+      'checked,'
+      'description,'
+      'company_id,'
+      'semiproduct_type_id,'
+      'semiproduct_dimension_id,'
+      'semiproduct_weight_id,'
+      'semiproduct_material_id,'
+      'technology_id,'
+      'part_weight)'
+      'VALUES('
+      ':technological_process_id,'
+      ':gt_code,'
+      ':part_name,'
+      ':drawing_number,'
+      ':quantity,'
+      ':date_of_assigment,'
+      ':date_of_issue,'
+      ':created,'
+      ':approved,'
+      ':checked,'
+      ':description,'
+      ':company_id,'
+      ':semiproduct_type_id,'
+      ':semiproduct_dimnesion_id,'
+      ':semiproduct_weight_id,'
+      ':semiproduct_material_id,'
+      ':technology_id,'
+      ':part_weight'
+      ')'
+    )
+    ModifySQL.Strings = (
+      'UPDATE technological_process SET'
+      'gt_code = :gt_code,'
+      'part_name = :part_name,'
+      'drawing_number = :drawing_number,'
+      'quantity = :quantity,'
+      'date_of_assigment = :date_of_assigment,'
+      'date_of_issue = :date_of_issue,'
+      'created = :created,'
+      'approved = :approved,'
+      'checked = :checked,'
+      'description = :description,'
+      'company_id = :company_id,'
+      'semiproduct_type_id = :semiproduct_type_id,'
+      'semiproduct_dimension_id = :semiproduct_dimension_id,'
+      'semiproduct_weight_id = :semiproduct_weight_id,'
+      'semiproduct_material_id = :semiproduct_material_id,'
+      'technology_id = :technology_id,'
+      'part_weight = :part_weight'
+      'WHERE technological_process_id = :technological_process_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 528
+    top = 80
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'gt_code'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'part_name'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'drawing_number'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'quantity'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'date_of_assigment'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'date_of_issue'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'created'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'approved'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'checked'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'description'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'company_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_type_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_dimension_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_weight_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_material_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'technology_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'part_weight'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'technological_process_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_dimnesion_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object updOps: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM operation_tool WHERE operation_id = :operation_id;'
+      'DELETE FROM operation_fixture WHERE operation_id = :operation_id;'
+      ''
+      'DELETE FROM operation WHERE operation_id = :operation_id;'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO operation '
+      '(technological_process_id, operation_number, operation_name_id, machine_id, operation_desc, operation_time) '
+      'VALUES(:technological_process_id, :operation_number, :operation_name_id, :machine_id, :operation_desc, :operation_time)'
+      'RETURNING operation_id'
+    )
+    ModifySQL.Strings = (
+      'UPDATE operation '
+      'SET operation_number = :operation_number,'
+      'operation_name_id = :operation_name_id,'
+      'machine_id = :machine_id,'
+      'operation_desc = :operation_desc,'
+      'operation_time = :operation_time'
+      'WHERE operation_id = :operation_id'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 600
+    top = 80
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_number'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_name_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'machine_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_desc'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_time'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'technological_process_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object updTools: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM operation_tool WHERE operation_tool_id = :operation_tool_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO operation_tool'
+      '(operation_tool_id, operation_id, tool_id)'
+      'VALUES(:operation_tool_id, :operation_id, :tool_id)'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 328
+    top = 256
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_tool_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'tool_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryTools: TZQuery
+    Connection = dbConnection
+    UpdateObject = updTools
+    SQL.Strings = (
+      'SELECT a.*, b.tool_name, b.tool_description'
+      'FROM operation_tool a'
+      'LEFT JOIN tool b'
+      'ON b.tool_id = a.tool_id'
+      'WHERE operation_id = :operation_id'
+      '  '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end>
+    left = 328
+    top = 312
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end>
+    object qryToolsoperation_tool_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_tool_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryToolsoperation_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryToolstool_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tool_id'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryToolstool_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'tool_name'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryToolstool_description: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'tool_description'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsTools: TDatasource
+    AutoEdit = False
+    DataSet = qryTools
+    left = 328
+    top = 368
+  end
+  object updFixtures: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM operation_fixture WHERE operation_fixture_id = :operation_fixture_id'
+    )
+    InsertSQL.Strings = (
+      'INSERT INTO operation_fixture'
+      '(operation_fixture_id, operation_id, fixture_id)'
+      'VALUES(:operation_fixture_id, :operation_id, :fixture_id)'
+    )
+    UseSequenceFieldForRefreshSQL = False
+    left = 400
+    top = 256
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_fixture_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end    
+      item
+        DataType = ftUnknown
+        Name = 'fixture_id'
+        ParamType = ptUnknown
+      end>
+  end
+  object qryFixtures: TZQuery
+    Connection = dbConnection
+    SortedFields = 'fixture_name'
+    UpdateObject = updFixtures
+    SQL.Strings = (
+      'SELECT a.*, b.fixture_name, b.fixture_desc'
+      'FROM operation_fixture a'
+      'LEFT JOIN fixture b'
+      'ON b.fixture_id = a.fixture_id'
+      'WHERE operation_id = :operation_id'
+      '  '
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end>
+    IndexFieldNames = 'fixture_name Asc'
+    left = 400
+    top = 312
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'operation_id'
+        ParamType = ptUnknown
+      end>
+    object qryFixturesoperation_fixture_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_fixture_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryFixturesoperation_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFixturesfixture_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fixture_id'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryFixturesfixture_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'fixture_name'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryFixturesfixture_desc: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'fixture_desc'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsFixtures: TDatasource
+    AutoEdit = False
+    DataSet = qryFixtures
+    left = 400
+    top = 368
+  end
+  object qryOperationNames: TZQuery
+    Connection = dbConnection
+    SQL.Strings = (
+      'SELECT operation_name_id, operation_name'
+      'FROM operation_name'
+      '  '
+    )
+    Params = <>
+    left = 488
+    top = 312
+    object qryOperationNamesoperation_name_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_name_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryOperationNamesoperation_name: TStringField
+      DisplayWidth = 560
+      FieldKind = fkData
+      FieldName = 'operation_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 560
+    end
+  end
+  object dsOperationNames: TDatasource
+    AutoEdit = False
+    DataSet = qryOperationNames
+    left = 488
+    top = 368
+  end
+  object qryMachines: TZQuery
+    Connection = dbConnection
+    SQL.Strings = (
+      'SELECT machine_id, machine_name, machine_desc'
+      'FROM machine'
+    )
+    Params = <>
+    left = 592
+    top = 312
+    object qryMachinesmachine_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'machine_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryMachinesmachine_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'machine_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+    object qryMachinesmachine_desc: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'machine_desc'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsMachines: TDatasource
+    AutoEdit = False
+    DataSet = qryMachines
+    left = 592
+    top = 371
+  end
+  object qryOps: TZQuery
+    Connection = dbConnection
+    SortedFields = 'operation_number'
+    AfterOpen = qryOpsAfterOpen
+    AfterScroll = qryOpsAfterScroll
+    UpdateObject = updOps
+    SQL.Strings = (
+      'SELECT a.*, b.operation_name, c.machine_name FROM operation a LEFT JOIN operation_name b ON b.operation_name_id = a.operation_name_id LEFT JOIN machine c ON c.machine_id = a.machine_id WHERE a.technological_process_id = :technological_process_id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'technological_process_id'
+        ParamType = ptUnknown
+      end>
+    IndexFieldNames = 'operation_number Asc'
+    left = 601
+    top = 136
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'technological_process_id'
+        ParamType = ptUnknown
+      end>
+    object qryOpsoperation_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryOpstechnological_process_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'technological_process_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOpsoperation_number: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_number'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOpsmachine_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'machine_id'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOpsoperation_desc: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_desc'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+    object qryOpsoperation_time: TFloatField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_time'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      MaxValue = 0
+      MinValue = 0
+      Precision = 4
+    end
+    object qryOpsoperation_name_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'operation_name_id'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOpstemplate_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'template_id'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qryOpsoperation_name: TStringField
+      DisplayWidth = 560
+      FieldKind = fkData
+      FieldName = 'operation_name'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 560
+    end
+    object qryOpsmachine_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'machine_name'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 480
+    end
+  end
+  object dsOps: TDatasource
+    AutoEdit = False
+    DataSet = qryOps
+    left = 602
+    top = 200
+  end
+  object qrySemiproductType: TZQuery
+    Connection = dbConnection
+    SortedFields = 'semiproduct_type_id'
+    AfterScroll = qrySemiproductTypeAfterScroll
+    SQL.Strings = (
+      'SELECT semiproduct_type_id, type_name FROM semiproduct_type'
+    )
+    Params = <>
+    IndexFieldNames = 'semiproduct_type_id Asc'
+    left = 328
+    top = 424
+    object qrySemiproductTypesemiproduct_type_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_type_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrySemiproductTypetype_name: TStringField
+      DisplayWidth = 40
+      FieldKind = fkData
+      FieldName = 'type_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 100
+    end
+  end
+  object dsSemiproductType: TDatasource
+    DataSet = qrySemiproductType
+    left = 328
+    top = 464
+  end
+  object dsNorm: TDatasource
+    left = 390
+    top = 464
+  end
+  object dsNormSpec: TDatasource
+    left = 454
+    top = 464
+  end
+  object qryTechnology: TZQuery
+    Connection = dbConnection
+    SortedFields = 'technology_name'
+    SQL.Strings = (
+      'SELECT technology_id, technology_name FROM technology'
+    )
+    Params = <>
+    IndexFieldNames = 'technology_name Asc'
+    left = 520
+    top = 424
+    object qryTechnologytechnology_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'technology_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qryTechnologytechnology_name: TStringField
+      DisplayWidth = 400
+      FieldKind = fkData
+      FieldName = 'technology_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 400
+    end
+  end
+  object dsTechnology: TDatasource
+    DataSet = qryTechnology
+    left = 518
+    top = 464
+  end
+  object qrySemiproductDim: TZQuery
+    Connection = dbConnection
+    SortedFields = 'semiproduct_type_id'
+    SQL.Strings = (
+      'SELECT * FROM semiproduct_dimension WHERE semiproduct_type_id = :semiproduct_type_id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_type_id'
+        ParamType = ptUnknown
+      end>
+    IndexFieldNames = 'semiproduct_type_id Asc'
+    left = 592
+    top = 424
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'semiproduct_type_id'
+        ParamType = ptUnknown
+      end>
+    object qrySemiproductDimsemiproduct_dimension_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_dimension_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrySemiproductDimsemiproduct_type_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_type_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrySemiproductDimdimension_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'dimension_name'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+  end
+  object dsSemiproductDim: TDatasource
+    DataSet = qrySemiproductDim
+    left = 592
+    top = 464
+  end
+  object qrySemiproductWeight: TZQuery
+    Connection = dbConnection
+    SortedFields = 'semiproduct_weight_id'
+    SQL.Strings = (
+      'SELECT * FROM semiproduct_weight'
+    )
+    Params = <>
+    IndexFieldNames = 'semiproduct_weight_id Asc'
+    left = 696
+    top = 424
+    object qrySemiproductWeightsemiproduct_weight_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_weight_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrySemiproductWeightweight_type: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'weight_type'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qrySemiproductWeightweight_desc: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'weight_desc'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsSemiproductWeight: TDatasource
+    DataSet = qrySemiproductWeight
+    left = 696
+    top = 464
+  end
+  object qrySemiproductMat: TZQuery
+    Connection = dbConnection
+    SortedFields = 'semiproduct_material_id'
+    SQL.Strings = (
+      'SELECT * FROM semiproduct_material'
+    )
+    Params = <>
+    IndexFieldNames = 'semiproduct_material_id Asc'
+    left = 800
+    top = 424
+    object qrySemiproductMatsemiproduct_material_id: TLongintField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'semiproduct_material_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qrySemiproductMatmaterial_name: TStringField
+      DisplayWidth = 480
+      FieldKind = fkData
+      FieldName = 'material_name'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+      Size = 480
+    end
+    object qrySemiproductMatmaterial_desc: TMemoField
+      DisplayWidth = 10
+      FieldKind = fkData
+      FieldName = 'material_desc'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      BlobType = ftBlob
+      Transliterate = False
+    end
+  end
+  object dsSemiproductMat: TDatasource
+    DataSet = qrySemiproductMat
+    left = 800
+    top = 464
+  end
+  object frReport: TfrReport
+    InitialZoom = pzDefault
+    Options = []
+    PreviewButtons = [pbZoom, pbPrint, pbFind, pbExit]
+    DataType = dtDataSet
+    Title = 'TP report'
+    OnGetValue = frReportGetValue
+    left = 728
+    top = 80
+    ReportForm = {
+      19000000
+    }
+  end
+  object frDsProcessOperations: TfrDBDataSet
+    DataSet = qryOps
+    OnFirst = frDsProcessOperationsFirst
+    OnNext = frDsProcessOperationsNext
+    left = 728
+    top = 139
+  end
+  object frBarCode: TfrBarCodeObject
+    left = 802
+    top = 84
+  end
+  object frTNPDFExport1: TfrTNPDFExport
+    left = 728
+    top = 200
+  end
+  object frCSVExport1: TfrCSVExport
+    left = 728
+    top = 256
+  end
+end
